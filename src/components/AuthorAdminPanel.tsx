@@ -54,18 +54,18 @@ export default function AuthorAdminPanel({ isOpen, onClose }: AuthorAdminPanelPr
         <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
           <aside className="w-full border-b border-line bg-white/60 p-5 lg:w-72 lg:border-b-0 lg:border-r">
             <div className="space-y-2">
-              {[
+              {([
                 ["Панель", true],
                 ["Мої матеріали", false],
                 ["Статистика", false],
                 ["Налаштування", false],
-              ].map(([label, active]) => (
+              ] as [string, boolean][]).map(([label, active]) => (
                 <button
                   key={label}
                   type="button"
                   className={`flex w-full items-center justify-between rounded-2xl px-3 py-2 text-left text-sm transition-colors ${active
-                      ? "bg-ink text-paper"
-                      : "bg-paper text-ink-soft hover:bg-white hover:text-violet"
+                    ? "bg-ink text-paper"
+                    : "bg-paper text-ink-soft hover:bg-white hover:text-violet"
                     }`}
                 >
                   <span>{label}</span>
