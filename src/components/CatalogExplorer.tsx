@@ -1,29 +1,44 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import { categories, items, type Category } from "@/lib/data";
+import { useMemo, useState } from "react";
 import ItemCard from "./ItemCard";
 
 type SortKey = "new" | "popular";
 
-export default function CatalogExplorer() {
+export default function CatalogExplorer({ query = "" }: { query?: string }) {
   const [active, setActive] = useState<Category | "Усі">("Усі");
   const [sort, setSort] = useState<SortKey>("new");
 
   const visible = useMemo(() => {
-    const filtered =
-      active === "Усі" ? items : items.filter((item) => item.category === active);
-    const sorted = [...filtered].sort((a, b) =>
-      sort === "new"
-        ? +new Date(b.addedAt) - +new Date(a.addedAt)
-        : b.popularity - a.popularity
+    const base = active === "Усі" ? items : items.filter((item) => item.category === active);
+    const filteredByQuery = query
+      ? base.filter((item) => {
+        const q = query.toLowerCase();
+        return (
+          item.title.toLowerCase().includes(q) ||
+          item.description.toLowerCase().includes(q) ||
+          item.author.toLowerCase().includes(q) ||
+          item.category.toLowerCase().includes(q)
+        );
+      })
+      : base;
+
+    const sorted = [...filteredByQuery].sort((a, b) =>
+      sort === "new" ? +new Date(b.addedAt) - +new Date(a.addedAt) : b.popularity - a.popularity
     );
+
     return sorted;
-  }, [active, sort]);
+  }, [active, sort, query]);
 
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line pb-4">
+        {/* <form className="order-1 w-full sm:order-1 sm:w-auto sm:flex-1" role="search" 
+            placeholder="Пошук: назва, опис, автор…"
+          />
+        </form> */}
+
         <nav className="flex flex-wrap gap-2 font-mono text-sm" aria-label="Категорії">
           {(["Усі", ...categories] as const).map((cat) => (
             <button

@@ -1,12 +1,16 @@
+"use client";
+
 import CatalogExplorer from "@/components/CatalogExplorer";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [query, setQuery] = useState("");
+
   return (
     <>
-      <Header />
+      <Header query={query} onQueryChange={setQuery} />
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-10">
         <section className="mb-12 max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-wide text-coral">
@@ -21,7 +25,7 @@ export default function Home() {
             авторів.
           </p>
         </section>
-        <CatalogExplorer />
+        <CatalogExplorer query={query} />
       </main>
       <Footer />
     </>
