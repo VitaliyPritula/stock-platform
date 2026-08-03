@@ -23,12 +23,13 @@ export default function Header() {
           >
             Telegram-бот
           </a>
-          <a
-            href="#"
+          <Link
+            href="/author-admin"
             className="marquee rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-violet-deep"
           >
             Стати автором
-          </a>
+          </Link>
+          
         </div>
       </div>
     </header>

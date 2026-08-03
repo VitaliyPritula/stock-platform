@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/item/aurora-ui-kit":{},"/item/orbit-icon-pack":{},"/item/field-notes-template":{},"/item/signal-logo-set":{},"/item/nimbus-dashboard-kit":{},"/item/handdrawn-badges":{},"/item/portfolio-template":{},"/item/monoline-marks":{}},"dynamicRoutes":{"/item/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/item/[id]","routeRegex":"^\\/item\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"9987e1fd70abd492ac3eaf702c137d59","previewModeSigningKey":"9a1d461d57a3459a70895598a78b35a90dbd2b33bb1c5e6e4698f8f05b34f889","previewModeEncryptionKey":"4d593070b8b942890f1c96015f0d5595998317adabdcb2897c09bc29f51abe1b"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "d847ab14d4e8830563a69a9dcb306333",
+    "previewModeSigningKey": "1c1ac34eb9dde7532e2fc89e67f45a2da524cccc8fd7cb5ff0cda174e4013cc7",
+    "previewModeEncryptionKey": "7b5fbe363a93ef90569dc975f779082a7bd0c07d612fdc2e565dee5d77f9d9c7"
+  }
+}

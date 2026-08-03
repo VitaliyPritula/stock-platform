@@ -1,6 +1,7 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import CatalogExplorer from "@/components/CatalogExplorer";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -20,7 +21,6 @@ export default function Home() {
             авторів.
           </p>
         </section>
-
         <CatalogExplorer />
       </main>
       <Footer />
