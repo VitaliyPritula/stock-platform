@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f5f5f1;
+  --ink: #16161a;
+  --ink-soft: #4a4a52;
+  --violet: #6e56cf;
+  --violet-deep: #4c37a8;
+  --coral: #ff6b4a;
+  --line: #dedad0;
+  --muted: #8b8a93;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-violet: var(--violet);
+  --color-violet-deep: var(--violet-deep);
+  --color-coral: var(--coral);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-mono-plex);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), sans-serif;
+}
+
+.marquee {
+  position: relative;
+}
+.marquee::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1.5px dashed transparent;
+  border-radius: 10px;
+  pointer-events: none;
+  transition: border-color 0.15s ease;
+}
+.marquee:hover::after,
+.marquee:focus-visible::after {
+  border-color: var(--violet);
+}
+
+.bracket-tab {
+  position: relative;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+}
+.bracket-tab[data-active="true"]::before,
+.bracket-tab[data-active="true"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  width: 6px;
+  border-color: var(--ink);
+  border-style: solid;
+}
+.bracket-tab[data-active="true"]::before {
+  left: -2px;
+  border-width: 1.5px 0 1.5px 1.5px;
+}
+.bracket-tab[data-active="true"]::after {
+  right: -2px;
+  border-width: 1.5px 1.5px 1.5px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
+  }
+}

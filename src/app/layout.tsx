@@ -1,0 +1,41 @@
+import type { Metadata } from "next";
+import { Inter, Unbounded, IBM_Plex_Mono } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "cyrillic"],
+});
+
+const unbounded = Unbounded({
+  variable: "--font-space-grotesk",
+  subsets: ["latin", "cyrillic"],
+  weight: ["500", "600", "700"],
+});
+
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-mono-plex",
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500"],
+});
+
+export const metadata: Metadata = {
+  title: "Стокплатформа — каталог дизайн-матеріалів",
+  description:
+    "Публічний каталог стокових графічних матеріалів: UI kit, іконки, шаблони та логотипи.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="uk"
+      className={`${inter.variable} ${unbounded.variable} ${plexMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-paper text-ink">{children}</body>
+    </html>
+  );
+}
