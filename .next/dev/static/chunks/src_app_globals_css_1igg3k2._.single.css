@@ -415,10 +415,6 @@
     margin-top: calc(var(--spacing) * 24);
   }
 
-  .mb-8 {
-    margin-bottom: calc(var(--spacing) * 8);
-  }
-
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
@@ -666,10 +662,6 @@
     .bg-paper\/70 {
       background-color: color-mix(in oklab, var(--paper) 70%, transparent);
     }
-  }
-
-  .bg-violet {
-    background-color: var(--violet);
   }
 
   .bg-white {

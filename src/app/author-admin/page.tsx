@@ -1,5 +1,6 @@
+import Header from "@/components/Header";
 import Link from "next/link";
-
+  
 const authorItems = [
   { title: "UI kit для SaaS", status: "Опубліковано", meta: "3 дні тому" },
   { title: "Набір іконок для startup", status: "Чернетка", meta: "1 день тому" },
@@ -9,6 +10,7 @@ const authorItems = [
 export default function AuthorAdminPage() {
   return (
     <main className="min-h-screen bg-paper">
+      <Header />
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-8">
         <div className="flex flex-wrap items-center justify-between gap-4 rounded-[24px] border border-line bg-white/80 p-5 shadow-sm">
           <div>
